@@ -1,0 +1,10 @@
+<% if @power_generators %>
+  <%= @power_generators.count %> resultado(s) encontrados<br/><br/>
+
+  <% @power_generators.each do |pg| %>
+    <%= link_to pg.name, root_path %><br/>
+  <% end %>
+
+<% else %>
+  <p>Nenhum resultado foi encontrado</p>
+<% end %>

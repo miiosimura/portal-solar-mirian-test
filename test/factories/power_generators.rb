@@ -5,7 +5,7 @@ FactoryBot.define do
     image_url { 'https://marketplace-img-production.s3.amazonaws.com/products/13357/large/Kit-Gerador-de-Energia-Solar-WEG---SIW500H---ST013-18-22.jpg?1546434535' }
     manufacturer { 'WEG' }
     price { 49990.00 }
-    kwp { 2.30 }
+    kwp { 102.30 }
     height { 1.2 }
     width { 0.2 }
     lenght { 1.8 }
