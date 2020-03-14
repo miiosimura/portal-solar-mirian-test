@@ -1,47 +1,14 @@
-<div>
-  <div class="header">
-    <div class="logo"><%= image_tag 'ps_logo.png' %></div>
-    <div class="header__title">Geradores de Energia</div>
-  </div>
 
-  <div class="searcher gradient">
-    <%= form_with url: simple_search_path, local: true, class: 'form-inline my-2 my-lg-0', method: :get do %>
-      <div class="advanced-form">
-        <h4>Pesquisa Simples</h4>
-        <div class="advanced-form__input">
-          <%= label_tag :simpleSearch, 'O que você procura?' %><br/>
-          <%= text_field_tag :simpleSearch %><br/>
-        </div>
-        <div class="advanced-form__btn">
-          <%= submit_tag 'Pesquisa Simples', class:"btn btn-outline-primary btn-lg" %><br/>
-        </div>
-      </div>
-    <% end %>
 
-    <%= form_with url: advanced_search_path, local: true, class: 'form-inline my-2 my-lg-0', method: :get do %>
-      <div class="advanced-form">
-        <h4>Pesquisa Avançada</h4>
-        <div class="advanced-form__input">
-          <%= label_tag :advancedSearch, 'Informe a quantidade de kWh consumida em um mês' %><br/>
-          <%= number_field_tag :advancedSearch %><br/>
-        </div>
-        <div class="advanced-form__btn">
-          <%= submit_tag 'Pesquisa Avançada', class:"btn btn-outline-primary btn-lg" %><br/>
-        </div>
+<div class="container" >
+  <% @power_generators.each do |power_generator| %>
+    <div class="box card power_generator-card">
+      <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
+      <div class="power_generator-card__body">
+        <h2><%= link_to power_generator.name.upcase, power_generator_path(power_generator) %></h2>
+        <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
+        <p><strong>Descrição: </strong><%= power_generator.description %></p>
       </div>
-    <% end %>
-  </div>
-
-  <div class="container" >
-    <% @power_generators.each do |power_generator| %>
-      <div class="box card power_generator-card">
-        <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
-        <div class="power_generator-card__body">
-          <h2><%= link_to power_generator.name.upcase, power_generator_path(power_generator) %></h2>
-          <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-          <p><strong>Descrição: </strong><%= power_generator.description %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

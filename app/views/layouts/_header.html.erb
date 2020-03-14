@@ -1,0 +1,32 @@
+<div class="header">
+  <%= link_to image_tag('ps_logo.png', class: 'logo'), root_path %>
+    <div class="header__title">Geradores de Energia</div>
+</div>
+
+<div class="searcher gradient">
+  <%= form_with url: simple_search_path, local: true, class: 'form-inline my-2 my-lg-0', method: :get do %>
+    <div class="advanced-form">
+      <h4>Pesquisa Simples</h4>
+      <div class="advanced-form__input">
+        <%= label_tag :simpleSearch, 'O que você procura?' %><br/>
+        <%= text_field_tag :simpleSearch %><br/>
+      </div>
+      <div class="advanced-form__btn">
+        <%= submit_tag 'Pesquisa Simples', class:"btn btn-outline-primary btn-lg" %><br/>
+      </div>
+    </div>
+  <% end %>
+
+  <%= form_with url: advanced_search_path, local: true, class: 'form-inline my-2 my-lg-0', method: :get do %>
+    <div class="advanced-form">
+      <h4>Pesquisa Avançada</h4>
+      <div class="advanced-form__input">
+        <%= label_tag :advancedSearch, 'Informe a quantidade de kWh consumida em um mês' %><br/>
+        <%= number_field_tag :advancedSearch %><br/>
+      </div>
+      <div class="advanced-form__btn">
+        <%= submit_tag 'Pesquisa Avançada', class:"btn btn-outline-primary btn-lg" %><br/>
+      </div>
+    </div>
+  <% end %>
+</div>
