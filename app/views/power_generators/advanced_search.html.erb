@@ -1,5 +1,5 @@
 <% if @power_generators %>
-  <%= @power_generators.count %> resultado(s) encontrados<br/><br/>
+  <h2>Encontramos <%= @power_generators.count %> resultado(s) de painel solar ideal para o seu consumo!</h2>
 
   <% @power_generators.each do |pg| %>
     <%= link_to pg.name, root_path %><br/>

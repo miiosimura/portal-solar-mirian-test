@@ -1,0 +1,14 @@
+<%= image_tag @power_generator.image_url %>
+<h2><%= @power_generator.name.upcase %></h2>
+<p><%= number_to_currency(@power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
+<p><strong>Descrição: </strong><%= @power_generator.description %></p>
+
+<%= form_with url: power_generator_delivery_tax_path(@power_generator.id), local: true do |f| %>
+  <%= f.label :zip_code, 'Informe seu CEP' %>
+  <%= f.number_field :zip_code %>
+  <%= f.submit 'Calcular Frete' %>
+<% end %>
+
+<% if @cost %>
+  Valor do Frete: <%= number_to_currency(@cost, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %>
+<% end %>

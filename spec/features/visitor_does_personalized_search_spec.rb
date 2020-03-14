@@ -8,7 +8,7 @@ feature 'Visitor does a personalized search' do
     fill_in 'Informe a quantidade de kWh consumida em um mês', with: '100'
     click_on 'Pesquisa Avançada'
 
-    expect(page).to have_content('1 resultado(s) encontrados')
+    expect(page).to have_content('Encontramos 1 resultado(s) de painel solar ideal para o seu consumo!')
     expect(page).to have_link('TRIFÁSICO 380V')
   end
 end
