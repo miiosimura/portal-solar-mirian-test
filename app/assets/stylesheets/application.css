@@ -95,19 +95,30 @@ p.power_generator-card__price {
   display: flex;
 }
 
-.simple-form__input {
-  width: 200px;
-  margin-left: 100px;
+.form-inline {
+  margin-left: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
-.simple-form__btn {
-  margin-left: -60px;
+.form-inline label {
+  margin: 5px 10px 5px 0;
 }
 
-.advanced-form {
-  margin-top: 22px;
-  margin-bottom: 20px;
-  margin-left: 100px;
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
 }
 
 .power_generators-list {

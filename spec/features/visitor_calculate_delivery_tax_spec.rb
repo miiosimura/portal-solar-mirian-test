@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Visitor calculate delivery tex' do
+feature 'Visitor calculate delivery tax' do
   scenario 'successfully' do
     create(:power_generator)
     create(:freight)
