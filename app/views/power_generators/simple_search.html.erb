@@ -1,5 +1,5 @@
-<% if @power_generators %>
-  <h2>Encontramos <%= @power_generators.count %> resultado(s) de painel solar ideal para o seu consumo!</h2>
+<% if @power_generators.any? %>
+  <h2>Encontramos <%= @power_generators.count %> resultado(s) de painel solar para a sua busca</h2>
   <div class="container" >
     <% @power_generators.each do |power_generator| %>
       <div class="box card power_generator-card">

@@ -30,7 +30,7 @@ class PowerGeneratorsController < ApplicationController
 
   def simple_search
     if params[:simpleSearch].length > 1
-      @power_generators = PowerGenerator.where('name like ?', "%#{params[:simpleSearch]}%")
+      @power_generators = PowerGenerator.where('name like ?', "%#{params[:simpleSearch].upcase}%")
       render :simple_search
 
     else
