@@ -1,4 +1,4 @@
-<% if @power_generators %>
+<% if @power_generators.any? %>
   <h2>Encontramos <%= @power_generators.count %> resultado(s) de painel solar ideal para o seu consumo!</h2>
   <div class="container" >
     <% @power_generators.each do |power_generator| %>
