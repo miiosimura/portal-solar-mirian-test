@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :power_generators, only: %i[show] do
     post '/delivery_tax', to: 'power_generators#delivery_tax'
   end
+  get '/sort_search', to: 'power_generators#sort_search'
 end

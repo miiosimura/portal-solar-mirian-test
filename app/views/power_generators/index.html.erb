@@ -1,3 +1,6 @@
+  Ordenar por: <%= link_to 'Nome', sort_search_path(filter: 'name') %> |
+               <%= link_to 'Preço (menor para maior)', sort_search_path(filter: 'price') %> |
+               <%= link_to 'Preço (maior para menor)', sort_search_path(filter: 'price', desc: true) %>
 <div class="container" >
   <% @power_generators.each do |power_generator| %>
     <div class="box card power_generator-card">

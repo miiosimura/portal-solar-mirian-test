@@ -7,6 +7,13 @@ class PowerGeneratorsController < ApplicationController
     @power_generator = PowerGenerator.find(params[:id])
   end
 
+  def sort_search
+    filter = params[:filter]
+    desc = params[:desc] ? :desc : :asc
+    @power_generators = PowerGenerator.order("#{filter} #{desc}")
+    render :index
+  end
+
   def delivery_tax
     zip_code = params[:zip_code]
 
@@ -41,7 +48,7 @@ class PowerGeneratorsController < ApplicationController
 
   def advanced_search
     if params[:advancedSearch].to_i >= 1
-      @power_generators = PowerGenerator.where('kwp >= ?', "#{params[:advancedSearch]}")
+      @power_generators = PowerGenerator.where('(kwp * 100) >= ? AND (kwp * 100) <= ?', "#{params[:advancedSearch]}", "#{params[:advancedSearch].to_i * 5}")
       render :advanced_search
 
     else
